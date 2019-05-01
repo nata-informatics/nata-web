@@ -30,8 +30,18 @@ link (not null)
 vendor:
 id (PK)
 nama (not null)  
-kontak (not null)
 deskripsi
+
+kontak:
+id (PK)
+id_vendor (FK ref to vendor(id))
+website
+email (not null)
+no_hp (not null)
+facebook
+twitter
+instagram
+line
 
 jenis_barang:
 id (PK)
