@@ -1,0 +1,11 @@
+bikin pake:
+html
+css (bootstrap 4)
+js (jquery)
+python (django)
+
+section page:
+home
+vendor
+event
+add line bot

@@ -1,0 +1,61 @@
+event:
+id (PK) 
+nama (not null)
+datetime (not null) (yyyy-mm-dd hh:mm:ss)
+deskripsi
+
+lokasi:
+id_lokasi (PK)
+id_vendor (FK ref to vendor(id))
+map_link
+alamat (not null)
+
+gambar_event:
+id_event (FK ref to event(id))
+link (not null)
+(id_event, link) (PK)
+
+merchandise:
+id (PK)
+nama (not null)
+id_event (FK ref to event(id))
+harga (not null)
+deskripsi
+
+gambar_merchandise:
+id_merchandise (FK ref to merchandise(id))
+link (not null)
+(id_merchandise, link) (PK)
+
+vendor:
+id (PK)
+nama (not null)  
+kontak (not null)
+deskripsi
+
+jenis_barang:
+id (PK)
+nama (not null)
+
+jenis_barang_vendor:
+id_vendor (FK ref to vendor(id))
+id_jenis_barang (FK ref to jenis_barang(id))
+(id_vendor, id_jenis_barang) (PK)
+
+testimoni:
+id_testimoni (PK)
+id_vendor (FK ref to vendor(id))
+deskripsi
+
+barang:
+id_barang (PK)
+id_vendor (FK ref to vendor(id))
+id_jenis_barang (FK ref to jenis_barang(id))
+nama (not null)
+harga (not null)
+deskripsi
+
+gambar_barang:
+id_barang (FK ref to barang(id))
+link (not null)
+(id_barang, link) (PK)
