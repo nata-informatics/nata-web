@@ -16,7 +16,7 @@ import dj_database_url
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PRODUCTION = os.environ.get('DATABASE_URL') != None
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = '/home/'
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '715633679215-9u7ea10t4bumqdfn8fphlgdrdlq8tu7n.apps.googleusercontent.com'  # Paste CLient Key
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'B7WoNPipvBfmBsy2QVxaHbnd'  # Paste Secret Key
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'social_django',
 ]
 
 MIDDLEWARE = [

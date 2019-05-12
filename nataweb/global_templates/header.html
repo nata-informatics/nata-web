@@ -16,7 +16,7 @@
     </div>
     {% if user.is_authenticated %}
         <img class="rounded-circle" src="http://www.eurogeosurveys.org/wp-content/uploads/2014/02/default_profile_pic.jpg" height="35px" width="35px">
-        <span>{{user.username}}</span>
+        <span>{{user|capfirst}}</span>
     {% else %}
         <a href="/accounts/login/">Sign In</a>
     {% endif %}
