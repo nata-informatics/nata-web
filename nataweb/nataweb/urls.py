@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+<<<<<<< HEAD
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -22,3 +23,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('vendor/', include('vendor.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+=======
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('base/', include('base.urls')),
+    path('home/', include('home.urls')),
+    path('vendor/', include('vendor.urls'))
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+>>>>>>> d1cf79367b3d0ddf4ee25af0f3a0450d99d0e95d
