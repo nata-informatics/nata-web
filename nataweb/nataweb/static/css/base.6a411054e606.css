@@ -1,0 +1,55 @@
+/*
+Color palette:
+ - #C0F3F0 -> blue lighter
+ - #8FDADF -> blue light
+ - #FFF7F7 -> white but not white enough
+ - #656D6D -> grey
+ - #34DFFB -> blue sky
+ - #FCF3E4 -> peach
+*/
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+    background-color: #FCF3E4;
+}
+
+#header {
+    background-color: #34DFFB;
+}
+
+#search-bar {
+    width: 500px;
+    height: 35px;
+    background: rgba(101, 109, 109, 0.29);
+    border-radius: 50px;
+}
+#wrapper {
+    background-size: cover;
+    min-height: 100%;
+    position: relative;
+}
+
+.copyright {
+    font-size: 10px;
+}
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+/*-------footer--------------*/
+#footer {
+    width: 100%;
+    height: 100px;
+    background-color:#34DFFB;
+    color: white;
+}
+
