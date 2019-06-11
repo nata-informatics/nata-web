@@ -20,7 +20,6 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
->>>>>>> 8a7b6080d4a8cad4c994cfb9fec93f7cebe32fdf
 
 urlpatterns = [
 	path('', RedirectView.as_view(url='home/')),
