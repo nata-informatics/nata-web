@@ -1,8 +1,22 @@
+Independent:
+Vendor
+Event
+Jenis Barang
+
+vendor:
+id (PK)
+nama (not null)  
+deskripsi
+
 event:
 id (PK) 
 nama (not null)
 datetime (not null) (yyyy-mm-dd hh:mm:ss)
 deskripsi
+
+jenis_barang:
+id (PK)
+nama (not null)
 
 lokasi:
 id_lokasi (PK)
@@ -27,10 +41,6 @@ id_merchandise (FK ref to merchandise(id))
 link (not null)
 (id_merchandise, link) (PK)
 
-vendor:
-id (PK)
-nama (not null)  
-deskripsi
 
 kontak:
 id (PK)
@@ -43,9 +53,6 @@ twitter
 instagram
 line
 
-jenis_barang:
-id (PK)
-nama (not null)
 
 jenis_barang_vendor:
 id_vendor (FK ref to vendor(id))
