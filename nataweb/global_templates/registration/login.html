@@ -7,46 +7,41 @@ Sign In
 
 {% block content %}
 
-{% if user.is_authenticated %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <p class=" h1">
-                Hello There {{user.username|capfirst}}
-            </p>
+<div class="row pt-3">
+    <div class="mx-auto col-md-5 col-10 bg-white p-5 shadow-lg" style="">
+        <h1 class="mb-4">Sign In</h1>
+        <form class="text-left">
+            <div class="form-group"><label>Email</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="email" required="required">
+                </div>
+            </div>
+            <div class="form-group"><label>Password</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Password" required="required">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mt-3">Sign In!</button>
+        </form>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <a class="btn text-white btn-block" href="#" style="background: rgb(221, 75, 57);" target="_blank"><i class="fa fa-fw fa-google-plus"></i>&nbsp;Login</a>
+            </div>
         </div>
-    </div>
-</div>
-
-{% else %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6 my-auto">
-            <p class="h1">Sign In Here </p>
-            <p>Don't have an account? <a href="/signUp/">Sign Up</a></p>
-            <p><strong>-- OR --</strong></p>
-            <a href="{% url 'social:begin' 'google-oauth2' %}">
-                <img src="{% static 'img/g+.png' %}" height="40px;" width="40px;">
-                Login with Google
-            </a>
-            <br>
-        </div>
-        <div class="col-md-6">
-            <div class="card-body text-left">
-                <form method="POST" id="signInGroup"> {% csrf_token %}
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Username</label>
-                        <input name="username" type="text" class="form-control" required="true" placeholder="Enter Username">
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-center lead" style="">Have no account? just sign up!</p>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input name="password" type="password" class="form-control" required="true" placeholder="Password">
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <a class="btn btn-primary btn-lg" href="#">Sign Up!</a>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
-{% endif %}
 {% endblock %}
