@@ -1,0 +1,27 @@
+.container {
+	font-family: 'Roboto';
+}
+
+#icon-vendor {
+	text-align: right;
+}
+
+#row-contact {
+	background-color: #C4C4C4;
+}
+
+#row-desc {
+	background-color: #C4C4C4;	
+}
+
+#text-layanan {
+	text-align: center;
+}
+
+.text-vendor {
+	font-weight: bold;
+}
+
+#text-vendor {
+	text-align: left;
+}
