@@ -1,8 +1,11 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+# from .models import CustomUser
 
 class NataUser(forms.Form):
+
     first_name = forms.CharField(
         max_length=20,
         label='First Name',
@@ -97,15 +100,6 @@ class NataUser(forms.Form):
             )
         )
 
-    # def clean_password(self):
-    #     data = self.cleaned_data['password']
-    #     data_2 = self.cleaned_data['password2']
-
-    #     if data != data_2 :
-    #         raise ValidationError(_('Confirmation password invalid!'))
-
-    #     return data
-
     def clean_first_name(self):
         data = self.cleaned_data['first_name']
         
@@ -113,3 +107,8 @@ class NataUser(forms.Form):
             raise ValidationError(_('Too much character!'))
 
         return data
+
+# class CustomNataUser(UserCreationForm):
+#     class Meta(UserCreationForm):
+#         model = CustomUser
+#         fields = '__all__'

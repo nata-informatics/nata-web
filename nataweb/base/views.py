@@ -36,3 +36,6 @@ def sign_up(request):
         'form' : form
     }
     return render(request, 'sign_up.html', context)
+
+def test_sign_up(request):
+    return render(request, 'test-sign-up.html')
