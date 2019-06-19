@@ -10,15 +10,16 @@ Sign In
 <div class="row pt-3">
     <div class="mx-auto col-md-5 col-10 bg-white p-5 shadow-lg" style="">
         <h1 class="mb-4">Sign In</h1>
-        <form class="text-left">
+        <form class="text-left" method="POST">
+            {% csrf_token %}
             <div class="form-group"><label>Email</label>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="email" required="required">
+                    <input type="text" class="form-control" id="inlineFormInputGroup" name='email' placeholder="email" required="required">
                 </div>
             </div>
             <div class="form-group"><label>Password</label>
                 <div class="input-group">
-                  <input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Password" required="required">
+                  <input type="password" name='password' class="form-control" id="inlineFormInputGroup" placeholder="Password" required="required">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary btn-block mt-3">Sign In!</button>

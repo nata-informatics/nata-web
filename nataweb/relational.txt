@@ -5,7 +5,8 @@ Jenis Barang
 
 vendor:
 id (PK)
-nama (not null)  
+nama (not null)
+lokasi  
 deskripsi
 
 event:
@@ -17,12 +18,6 @@ deskripsi
 jenis_barang:
 id (PK)
 nama (not null)
-
-lokasi:
-id_lokasi (PK)
-id_vendor (FK ref to vendor(id))
-map_link
-alamat (not null)
 
 gambar_event:
 id_event (FK ref to event(id))
