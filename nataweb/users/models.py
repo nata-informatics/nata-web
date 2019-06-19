@@ -6,6 +6,7 @@ class CustomUser(AbstractUser):
 	no_telp = models.CharField(max_length = 31, null= True, blank=False)
 	tanggal_lahir = models.DateField(null= True, blank=False)
 	email = models.EmailField(_('email address'), unique=True)
+	username = models.CharField(max_length = 31, null=False, blank=False)
 
 	USERNAME_FIELD = 'email'
-	REQUIRED_FIELDS = []
+	REQUIRED_FIELDS = ['username']

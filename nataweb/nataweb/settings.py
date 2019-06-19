@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'show',
     'vendor',
     'users',
+    'catalog',
+    'about'
 ]
 
 MIDDLEWARE = [
