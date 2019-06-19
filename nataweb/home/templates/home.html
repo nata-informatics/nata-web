@@ -12,8 +12,214 @@ home
 .vendor-title {
   text-align: center;
 }
-
 </style>
+{% endblock %}
+
+{% block js %}
+<script>
+$(document).ready(function(){
+  var items = ["Venue", "Stage", "Accessories"];
+  for (i = 0, len = items.length; i < len; i++) {
+    $(".carousel_holder").append(
+    '<div class="row pt-5">'+
+        '<div class="col-md-12 vendor-title">'+
+          '<h2>' + items[i] + ' in Jakarta</h2>'+
+        '</div>'+
+    '</div>'+
+    '<div class="row">'+
+      '<div class="col-md-1 card-btn">'+
+        '<a class="btn-floating child" href="#multi-item-carousel_'+i+'" data-slide="prev" id="left_'+i+'"><i class="fas fa-chevron-left"></i></a>'+
+      '</div>'+
+        '<div class="col-md-10">'+
+        '<div id="multi-item-carousel_'+i+'" class="carousel slide carousel-multi-item" data-interval="false">'+
+          '<div class="carousel-inner" role="listbox">'+
+            '<div class="carousel-item active">'+
+              '<div class="row">'+
+                '<div class="col-md-3 pt-2">'+
+                    '<div class="card border-light mb-3">'+
+                        '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                        '<div class="card-body">'+
+                          '<p class="card-text">Some text inside the first card</p>'+
+                          '<a href="#" class="btn btn-outline-primary">active button</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="col-md-3 pt-2">'+
+                    '<div class="card border-light mb-3">'+
+                        '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                        '<div class="card-body">'+
+                          '<p class="card-text">Some text inside the first card</p>'+
+                          '<a href="#" class="btn btn-outline-primary">active button</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="col-md-3 pt-2">'+
+                    '<div class="card border-light mb-3">'+
+                        '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                        '<div class="card-body">'+
+                          '<p class="card-text">Some text inside the first card</p>'+
+                          '<a href="#" class="btn btn-outline-primary">active button</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="col-md-3 pt-2">'+
+                    '<div class="card border-light mb-3">'+
+                        '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                        '<div class="card-body">'+
+                          '<p class="card-text">Some text inside the first card</p>'+
+                          '<a href="#" class="btn btn-outline-primary">active button</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+              '</div>'+
+            '</div>'+
+            '<div class="carousel-item">'+
+              '<div class="row">'+
+                '<div class="col-md-3 pt-2">'+
+                    '<div class="card border-light mb-3">'+
+                        '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                        '<div class="card-body">'+
+                          '<p class="card-text">Some text inside the first card</p>'+
+                          '<a href="#" class="btn btn-outline-primary">active button</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="col-md-3 pt-2">'+
+                    '<div class="card border-light mb-3">'+
+                        '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                        '<div class="card-body">'+
+                          '<p class="card-text">Some text inside the first card</p>'+
+                          '<a href="#" class="btn btn-outline-primary">active button</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="col-md-3 pt-2">'+
+                    '<div class="card border-light mb-3">'+
+                        '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                        '<div class="card-body">'+
+                          '<p class="card-text">Some text inside the first card</p>'+
+                          '<a href="#" class="btn btn-outline-primary">active button</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="col-md-3 pt-2">'+
+                    '<div class="card border-light mb-3">'+
+                        '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                        '<div class="card-body">'+
+                          '<p class="card-text">Some text inside the first card</p>'+
+                          '<a href="#" class="btn btn-outline-primary">active button</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+              '</div>'+
+            '</div>'+
+            '<div class="carousel-item">'+
+              '<div class="row">'+
+                '<div class="col-md-3 pt-2">'+
+                    '<div class="card border-light mb-3">'+
+                        '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                        '<div class="card-body">'+
+                          '<p class="card-text">Some text inside the first card</p>'+
+                          '<a href="#" class="btn btn-outline-primary">active button</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="col-md-3 pt-2">'+
+                    '<div class="card border-light mb-3">'+
+                        '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                        '<div class="card-body">'+
+                          '<p class="card-text">Some text inside the first card</p>'+
+                          '<a href="#" class="btn btn-outline-primary">active button</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="col-md-3 pt-2">'+
+                    '<div class="card border-light mb-3">'+
+                        '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                        '<div class="card-body">'+
+                          '<p class="card-text">Some text inside the first card</p>'+
+                          '<a href="#" class="btn btn-outline-primary">active button</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="col-md-3 pt-2">'+
+                    '<div class="card border-light mb-3">'+
+                        '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                        '<div class="card-body">'+
+                          '<p class="card-text">Some text inside the first card</p>'+
+                          '<a href="#" class="btn btn-outline-primary">active button</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+              '</div>'+
+            '</div>'+
+          '</div>'+
+        '</div>'+
+      '</div>'+
+      '<div class="col-md-1 card-btn">'+
+          '<a class="btn-floating child" href="#multi-item-carousel_'+i+'" data-slide="next" id="right_'+i+'"><i class="fas fa-chevron-right"></i></a>'+
+      '</div>'+
+    '</div>'
+    );
+  }
+
+  $("#multi-item-carousel_0").carousel({
+    interval: false,
+    wrap: false
+  });
+  $("#multi-item-carousel_1").carousel({
+    interval: false,
+    wrap: false
+  });
+  $("#multi-item-carousel_2").carousel({
+    interval: false,
+    wrap: false
+  });
+
+  $("#left_0").hide();
+  $("#left_1").hide();
+  $("#left_2").hide();
+
+  $("#multi-item-carousel_0").on("slid.bs.carousel", function(){
+    if ($("#multi-item-carousel_0 .carousel-inner .carousel-item:first").hasClass("active")) {
+      $("#left_0").hide();
+      $("#right_0").show();
+    } else if ($("#multi-item-carousel_0 .carousel-inner .carousel-item:last").hasClass("active")) {
+      $("#left_0").show();
+      $("#right_0").hide();
+    } else {
+      $("#left_0").show();
+      $("#right_0").show();
+    }
+  });
+  
+  $("#multi-item-carousel_1").on("slid.bs.carousel", function(){
+    if ($("#multi-item-carousel_1 .carousel-inner .carousel-item:first").hasClass("active")) {
+      $("#left_1").hide();
+      $("#right_1").show();
+    } else if ($("#multi-item-carousel_1 .carousel-inner .carousel-item:last").hasClass("active")) {
+      $("#left_1").show();
+      $("#right_1").hide();
+    } else {
+      $("#left_1").show();
+      $("#right_1").show();
+    }
+  });
+
+  $("#multi-item-carousel_2").on("slid.bs.carousel", function(){
+    if ($("#multi-item-carousel_2 .carousel-inner .carousel-item:first").hasClass("active")) {
+      $("#left_2").hide();
+      $("#right_2").show();
+    } else if ($("#multi-item-carousel_2 .carousel-inner .carousel-item:last").hasClass("active")) {
+      $("#left_2").show();
+      $("#right_2").hide();
+    } else {
+      $("#left_2").show();
+      $("#right_2").show();
+    }
+  });
+});
+</script>
 {% endblock %}
 
 {% block content %}
@@ -48,449 +254,6 @@ home
       </div>
     </div>
   </div>
-  <div class="row pt-5">
-      <div class="col-md-12 vendor-title">
-        <h2>Venue in Jakarta</h2>
-      </div>
-  </div>
-  <div class="row">
-    <div class="col-md-1 card-btn">
-      <a class="btn-floating child" href="#multi-item-carousel" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
-    </div>
-      <!-- carousel wrapper-->
-      <div class="col-md-10">
-      <div id="multi-item-carousel" class="carousel slide carousel-multi-item" data-ride="carousel">
-        <!-- slides -->
-        <div class="carousel-inner" role="listbox">
-          <!-- first slide-->
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <!-- end first slide -->
-          <!-- second slide -->
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-            <!-- end second slide -->
-            <!-- third slide -->
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-            <!-- end third slide -->
-        </div>
-      </div>
-    </div>
-    <div class="col-md-1 card-btn">
-        <a class="btn-floating child" href="#multi-item-carousel" data-slide="next"><i class="fas fa-chevron-right"></i></a>
-    </div>
-  </div>
-  <!-- end row -->
-  <div class="row pt-5">
-      <div class="col-md-12 vendor-title">
-        <h2>Stage in Jakarta</h2>
-      </div>
-  </div>
-  <div class="row">
-    <div class="col-md-1 card-btn">
-      <a class="btn-floating child" href="#multi-item-carousel2" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
-    </div>
-      <!-- carousel wrapper-->
-      <div class="col-md-10">
-      <div id="multi-item-carousel2" class="carousel slide carousel-multi-item" data-ride="carousel">
-        <!-- slides -->
-        <div class="carousel-inner" role="listbox">
-          <!-- first slide-->
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <!-- end first slide -->
-          <!-- second slide -->
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-            <!-- end second slide -->
-            <!-- third slide -->
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-            <!-- end third slide -->
-        </div>
-      </div>
-    </div>
-    <div class="col-md-1 card-btn">
-        <a class="btn-floating child" href="#multi-item-carousel2" data-slide="next"><i class="fas fa-chevron-right"></i></a>
-    </div>
-  </div>
-  <!-- end row -->
-  <div class="row pt-5">
-      <div class="col-md-12 vendor-title">
-        <h2>Tent in Jakarta</h2>
-      </div>
-  </div>
-  <div class="row">
-    <div class="col-md-1 card-btn">
-      <a class="btn-floating child" href="#multi-item-carousel3" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
-    </div>
-      <!-- carousel wrapper-->
-      <div class="col-md-10">
-      <div id="multi-item-carousel3" class="carousel slide carousel-multi-item" data-ride="carousel">
-        <!-- slides -->
-        <div class="carousel-inner" role="listbox">
-          <!-- first slide-->
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <!-- end first slide -->
-          <!-- second slide -->
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-            <!-- end second slide -->
-            <!-- third slide -->
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3 pt-2">
-                  <div class="card border-light mb-3">
-                      <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-                      <div class="card-body">
-                        <p class="card-text">Some text inside the first card</p>
-                        <a href="#" class="btn btn-outline-primary">active button</a>
-                      </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-            <!-- end third slide -->
-        </div>
-      </div>
-    </div>
-    <div class="col-md-1 card-btn">
-        <a class="btn-floating child" href="#multi-item-carousel3" data-slide="next"><i class="fas fa-chevron-right"></i></a>
-    </div>
-  </div>
-  <!-- end row -->
+  <div class="carousel_holder"></div>
 
 {% endblock %}
