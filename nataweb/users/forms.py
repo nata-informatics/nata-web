@@ -6,10 +6,11 @@ from .models import CustomUser
 
 class CustomNataUserForm(UserCreationForm):
 
-	username = forms.CharField(
-		max_length = 1024, 
-		label = 'Username',
-		widget = forms.TextInput(
+    username = forms.CharField(
+	    max_length = 12, 
+	    label = 'Username',
+        label_suffix='',
+	    widget = forms.TextInput(
 			attrs = {
 				'class': 'form-control',
 	            'placeholder': 'Azharnanda',
@@ -19,7 +20,7 @@ class CustomNataUserForm(UserCreationForm):
 			)
 		)
 
-	first_name = forms.CharField(
+    first_name = forms.CharField(
         max_length=20,
         label='First Name',
         label_suffix='',
@@ -33,7 +34,7 @@ class CustomNataUserForm(UserCreationForm):
             )
         )
 
-	last_name = forms.CharField(
+    last_name = forms.CharField(
         max_length=20,
         label='Last Name',
         label_suffix='',
@@ -41,26 +42,25 @@ class CustomNataUserForm(UserCreationForm):
             attrs={
                 'class': 'form-control',
                 'placeholder': 'Arnanda',
-                'required': 'required',
                 'type': 'text',
                 }
             )
         )
-
-	email = forms.EmailField(
-        label='Email',
-        label_suffix='',
-        widget=forms.EmailInput(
+    
+    email = forms.EmailField(
+        label = 'email',
+        label_suffix = '',
+        widget = forms.EmailInput(
             attrs={
                 'class': 'form-control',
-                'placeholder': 'Email@email',
+                'placeholder': 'Email',
                 'required': 'required',
                 'type': 'email'
                 }
             )
         )
 
-	tanggal_lahir = forms.DateField(
+    tanggal_lahir = forms.DateField(
         label='Date of Birth',
         label_suffix='',
         widget=forms.DateInput(
@@ -72,7 +72,7 @@ class CustomNataUserForm(UserCreationForm):
             )
         )
 
-	no_telp = forms.DecimalField(max_digits=13,
+    no_telp = forms.DecimalField(max_digits=13,
 	    label='Phone Number',
 	    label_suffix='',
 	    widget=forms.TextInput(
@@ -84,8 +84,8 @@ class CustomNataUserForm(UserCreationForm):
 	            }
 	        )
 	    )
-
-	password1 = forms.CharField(
+    
+    password1 = forms.CharField(
         label='Password',
         label_suffix='',
         widget=forms.TextInput(
@@ -98,7 +98,7 @@ class CustomNataUserForm(UserCreationForm):
             )
         )
     
-	password2 = forms.CharField(
+    password2 = forms.CharField(
 	    label='Confirmation Password',
 	    label_suffix='',
 	    widget=forms.TextInput(
@@ -110,9 +110,11 @@ class CustomNataUserForm(UserCreationForm):
 	            }
 	        )
     )
-	class Meta(UserCreationForm.Meta):
-		model = CustomUser
-		fields = UserCreationForm.Meta.fields + ('first_name', 'last_name', 'email', 'tanggal_lahir','no_telp', 'password1', 'password2')
+
+    class Meta(UserCreationForm.Meta):
+        model = CustomUser
+        fields = UserCreationForm.Meta.fields + ('first_name', 'last_name', 'email', 'tanggal_lahir','no_telp', 'password1', 'password2')
+
 
 class CustomUserChangeForm(UserChangeForm):
     class Meta:

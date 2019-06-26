@@ -17,15 +17,15 @@ def sign_up(request):
 			form.save()
 			username = form.cleaned_data.get('username')
 			raw_password = form.cleaned_data.get('password1')
-			user = authenticate(username=username, password=raw_password)
-			login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-			return HttpResponseRedirect('/')
+			user = form.save()
+			# login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+			return HttpResponseRedirect('/landing/')
 	else:
 		form = CustomNataUserForm()
 	context = {
         'form' : form
     }
-	return render(request, 'test-sign-up.html', context)
+	return render(request, 'sign-up.html', context)
 
 def sign_in(request):
 	if request.method == "POST":

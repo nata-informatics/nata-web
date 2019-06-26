@@ -6,4 +6,4 @@ def home(request):
 
 def logout(request):
 	request.session.flush()
-	return redirect("/")
+	return redirect("/landing/")

@@ -28,7 +28,7 @@ def sign_up(request):
             print(str(type(f_birth)) + ": " + str(f_birth))
             print(str(type(f_phone)) + ": " + str(f_phone))
             
-            return HttpResponseRedirect('/accounts/login/')
+            return HttpResponseRedirect('/landing/')
     else:
         form = NataUser()
 
