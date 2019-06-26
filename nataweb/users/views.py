@@ -18,7 +18,7 @@ def sign_up(request):
 			username = form.cleaned_data.get('username')
 			raw_password = form.cleaned_data.get('password1')
 			user = authenticate(username=username, password=raw_password)
-			login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+			login(request, user)
 			return HttpResponseRedirect('/')
 	else:
 		form = CustomNataUserForm()
