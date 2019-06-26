@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+  <title>nataevent</title>
+</head>
+
+<body>
+  <div class="py-5" >
+    <div class="container">
+      <div class="row">
+        <div class="p-5 col-md-7 ">
+          <h3 class="display-4 mb-3">NATAEVENT</h3>
+          <p class="mb-4 lead">Fullfill your event needs immediately coz we're here to help you! Venue, Stage, Accessories, or maybe soundsystem? not a big problem.</p>
+          <p> this website is under development</p>
+        </div>
+        <div class="mx-auto col-md-5 col-10 bg-white p-5 shadow-lg">
+            <h1 class="mb-4" style="text-align: center">Sign In</h1>
+            <form class="text-left" method="POST">
+                {% csrf_token %}
+                <div class="form-group"><label>Email</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="inlineFormInputGroup" name='email' placeholder="email" required="required">
+                    </div>
+                </div>
+                <div class="form-group"><label>Password</label>
+                    <div class="input-group">
+                        <input type="password" name='password' class="form-control" id="inlineFormInputGroup" placeholder="Password" required="required">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mt-3">Sign In!</button>
+            </form>
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <a class="btn text-white btn-block" href="{% url 'social:begin' 'google-oauth2' %}" style="background: rgb(221, 75, 57);"><i class="fab fa-fw fa-google-plus-g"></i>&nbsp;Login</a>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-center lead">Have no account? just sign up!</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <a class="btn btn-primary btn-lg" href="/users/sign-up/">Sign Up!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

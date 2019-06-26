@@ -15,7 +15,7 @@ import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PRODUCTION = os.environ.get('DATABASE_URL') != None
-LOGIN_URL = 'sign-in'
+LOGIN_URL = '/sign-in/'
 LOGIN_REDIRECT_URL = '/home/'
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '715633679215-9u7ea10t4bumqdfn8fphlgdrdlq8tu7n.apps.googleusercontent.com'  # Paste CLient Key
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'B7WoNPipvBfmBsy2QVxaHbnd'  # Paste Secret Key
