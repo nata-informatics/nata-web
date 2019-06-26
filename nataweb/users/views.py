@@ -15,7 +15,7 @@ def sign_up(request):
 			print("=============================")
 			print(form.cleaned_data['first_name'])
 			form.save()
-			username = form.cleaned_data.get('username')
+			username = form.cleaned_data.get('email')
 			raw_password = form.cleaned_data.get('password1')
 			user = authenticate(username=username, password=raw_password)
 			login(request, user)
@@ -25,7 +25,7 @@ def sign_up(request):
 	context = {
         'form' : form
     }
-	return render(request, 'test-sign-up.html', context)
+	return render(request, 'sign-up.html', context)
 
 def sign_in(request):
 	if request.method == "POST":

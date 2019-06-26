@@ -12,8 +12,200 @@ catalog
 </style>
 {% endblock %}
 
+{% block js %}
+<script>
+$(document).ready(function(){
+    for (i=0, len=5; i < len; i++) {
+        $("#container_catalog").append(
+            '<div class="row">'+
+                '<div class="col-md-1"></div>'+
+                '<div class="col-md-10">'+
+                    '<div class="row">'+
+                        '<div class="col-md-3 pt-2">'+
+                            '<div class="card border-light mb-3 text-center">'+
+                                '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                                '<div class="card-body">'+
+                                    '<h5 class="card-title">Grand Mercure</h5>'+
+                                    '<p class="card-subtitle">Venue, jakarta</p>'+
+                                    '<p class="card-text pt-1">$$$</p>'+
+                                    '<a href="#" class="btn btn-outline-primary btn-block mt-2">Lihat Vendor</a>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>'+
+                        '<div class="col-md-3 pt-2">'+
+                            '<div class="card border-light mb-3 text-center">'+
+                                '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                                '<div class="card-body">'+
+                                    '<h5 class="card-title">Grand Mercure</h5>'+
+                                    '<p class="card-subtitle">Venue, jakarta</p>'+
+                                    '<p class="card-text pt-1">$$$</p>'+
+                                    '<a href="#" class="btn btn-outline-primary btn-block mt-2">Lihat Vendor</a>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>'+
+                        '<div class="col-md-3 pt-2">'+
+                            '<div class="card border-light mb-3 text-center">'+
+                                '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                                '<div class="card-body">'+
+                                    '<h5 class="card-title">Grand Mercure</h5>'+
+                                    '<p class="card-subtitle">Venue, jakarta</p>'+
+                                    '<p class="card-text pt-1">$$$</p>'+
+                                    '<a href="#" class="btn btn-outline-primary btn-block mt-2">Lihat Vendor</a>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>'+
+                        '<div class="col-md-3 pt-2">'+
+                            '<div class="card border-light mb-3 text-center">'+
+                                '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                                '<div class="card-body">'+
+                                    '<h5 class="card-title">Grand Mercure</h5>'+
+                                    '<p class="card-subtitle">Venue, jakarta</p>'+
+                                    '<p class="card-text pt-1">$$$</p>'+
+                                    '<a href="#" class="btn btn-outline-primary btn-block mt-2">Lihat Vendor</a>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="col-md-1"></div>'+
+            '</div>'
+        );
+    }
+    $(window).scroll(function() {
+        console.log("hit the scroll!");
+        if($(window).scrollTop() + $(window).height() >= $(document).height()){
+            for (i = 0, len = 3; i < len; i++) {
+                $("#container_catalog").append(
+                    '<div class="row">'+
+                        '<div class="col-md-1"></div>'+
+                        '<div class="col-md-10">'+
+                            '<div class="row">'+
+                                '<div class="col-md-3 pt-2">'+
+                                    '<div class="card border-light mb-3 text-center">'+
+                                        '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                                        '<div class="card-body">'+
+                                            '<h5 class="card-title">Grand Mercure</h5>'+
+                                            '<p class="card-subtitle">Venue, jakarta</p>'+
+                                            '<p class="card-text pt-1">$$$</p>'+
+                                            '<a href="#" class="btn btn-outline-primary btn-block mt-2">Lihat Vendor</a>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                                '<div class="col-md-3 pt-2">'+
+                                    '<div class="card border-light mb-3 text-center">'+
+                                        '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                                        '<div class="card-body">'+
+                                            '<h5 class="card-title">Grand Mercure</h5>'+
+                                            '<p class="card-subtitle">Venue, jakarta</p>'+
+                                            '<p class="card-text pt-1">$$$</p>'+
+                                            '<a href="#" class="btn btn-outline-primary btn-block mt-2">Lihat Vendor</a>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                                '<div class="col-md-3 pt-2">'+
+                                    '<div class="card border-light mb-3 text-center">'+
+                                        '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                                        '<div class="card-body">'+
+                                            '<h5 class="card-title">Grand Mercure</h5>'+
+                                            '<p class="card-subtitle">Venue, jakarta</p>'+
+                                            '<p class="card-text pt-1">$$$</p>'+
+                                            '<a href="#" class="btn btn-outline-primary btn-block mt-2">Lihat Vendor</a>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                                '<div class="col-md-3 pt-2">'+
+                                    '<div class="card border-light mb-3 text-center">'+
+                                        '<img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">'+
+                                        '<div class="card-body">'+
+                                            '<h5 class="card-title">Grand Mercure</h5>'+
+                                            '<p class="card-subtitle">Venue, jakarta</p>'+
+                                            '<p class="card-text pt-1">$$$</p>'+
+                                            '<a href="#" class="btn btn-outline-primary btn-block mt-2">Lihat Vendor</a>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>'+
+                        '<div class="col-md-1"></div>'+
+                    '</div>'
+                );
+            }
+            $(window).scrollTop($(window).scrollTop()-1);
+        }
+    });
+});
+</script>
+{% endblock %}
+
 {% block content %}
-<div class='row'>
-    <div class='col-md-12' id="test"><h1>Catalog page gan!</h1></div>
+<div id='container_catalog'>
+    <div class="row pb-4">
+        <div class="col-sm-12 d-flex flex-grow-1 justify-content-center">
+          <ul class="nav nav-pills" >
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Category</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Venue</a>
+                <a class="dropdown-item" href="#">Stage</a>
+                <a class="dropdown-item" href="#" contenteditable="true">Accessories</a><a class="dropdown-item" href="#">Equipment</a><a class="dropdown-item" href="#">Sound System</a><a class="dropdown-item" href="#">Parking Lot</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Location</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Jakarta</a>
+                <a class="dropdown-item" href="#">Bogor</a>
+                <a class="dropdown-item" href="#">Depok</a><a class="dropdown-item" href="#">Tangerang</a>
+                <a class="dropdown-item" href="#">Bekasi</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Price</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Low</a>
+                <a class="dropdown-item" href="#">Medium</a>
+                <a class="dropdown-item" href="#">High</a>
+              </div>
+            </li>
+            <li class="nav-item"><a class="nav-link active" href="#">Search</a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 pb-1">
+            <h5 style="text-align: center">
+                Showing results for <b style="color: #16B5B4">All Categories</b> in <b style="color: #16B5B4">All Locations</b> with 
+                <b style="color: #16B5B4">All Prices</b>
+            </h5>
+        </div>
+    </div>
 </div>
 {% endblock %}
+<!-- 
+<div class="row">
+    <div class="col-sm-12 d-flex flex-grow-1 justify-content-center">
+        <form class="form-inline" novalidate>
+            <div class="form-group">
+              <select class="form-control" id="sel1">
+                <option>All Categories</option>
+                <option>Venue</option>
+                <option>Stage</option>
+                <option>Accessories</option>
+                <option>Equipment</option>
+                <option>Sound System</option>
+                <option>Parking Lot</option>
+              </select>
+            </div>
+             <div class="form-group">
+              <select class="form-control" id="sel2">
+                <option>All Locations</option>
+                <option>Jakarta</option>
+                <option>Bogor</option>
+                <option>Depok</option>
+                <option>Tangerang</option>
+                <option>Bekasi</option>
+              </select>
+            </div>
+        </form>
+    </div>
+</div> -->
