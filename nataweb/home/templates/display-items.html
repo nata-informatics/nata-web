@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+	
+  	{% if produks %}	  	
+  		<div class="row">  			
+	  		{% for produk in produks %}
+				<div class="col-md-2 pt-2">
+					<div class="card border-dark mb-3 text-center">
+						<img class="card-img-top" src="{{produk.urlimg}}" alt="Card image">
+	                    <div class="card-body">
+	                      	<h5 class="card-title">{{produk.nama}}</h5>
+	                      	<p class="card-subtitle">{{produk.vendor}}</p>
+	                      	<p class="card-text pt-1">{{produk.harga}}/{{produk.satuan}}</p>
+	                      	<a href="/home/detail-item/{{produk.id}}/" class="btn btn-outline-primary btn-block mt-2">Lihat Vendor</a>
+	                    </div>
+					</div>
+				</div>
+	  		{% endfor %}
+  		</div>
+  	{% endif %}
+
+{% endblock %}

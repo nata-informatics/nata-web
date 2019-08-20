@@ -4,8 +4,7 @@ from .models import Produks
 # Create your views here.
 def home(request):
 	context = {}
-	produks = Produks.objects.all()
-	context["produks"] = produks
+	context["produks"] = Produks.objects.all()
 	return render(request, 'home-farras.html', context)
 
 def addItem(request):
@@ -16,13 +15,14 @@ def addItem(request):
 			namaVendor = request.POST["namaVendor"]
 			hargaProduk = request.POST["hargaProduk"]
 			lokasiVendor = request.POST["lokasiVendor"]
+			linkImg = request.POST["linkImg"]
 			stockAvailabitlity = request.POST.get("stockAvailabitlity")
 			if stockAvailabitlity == None : 
 				stockAvailabitlity = False 
 			else: 
 				stockAvailabitlity = True
 			print(stockAvailabitlity)
-			Produks.objects.create(nama=namaItem, vendor=namaVendor, harga=hargaProduk, stok=stockAvailabitlity, lokasi=lokasiVendor)
+			Produks.objects.create(nama=namaItem, vendor=namaVendor, harga=hargaProduk, stok=stockAvailabitlity, lokasi=lokasiVendor, urlimg=linkImg)
 			return redirect("/")
 		return render(request, 'add-item.html')
 	else:
@@ -35,6 +35,11 @@ def detailItem(request, id=None):
 		'availability' : "Available" if produk_instance.stok == True else "Not Available",
 	}
 	return render(request, "produk-detail.html", context)
+
+def displayItems(request):
+	context = {}
+	context["produks"] = Produks.objects.all()
+	return render(request, "display-items.html", context)
 
 def logout(request):
 	request.session.flush()

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
 Home
 {% endblock %}
@@ -59,25 +60,49 @@ Home
   		<a href="add-item/"><div class="btn btn-outline-primary btn-block"> Add </div></a>
   	{% endif %}
 	
-	<div class="row">
-	  	{% if produks %}	  	
-	  		{% for produk in produks %}
-				<div class="col-md-3 pt-2">
-			  		<div class="card border-dark mb-3 text-center">
-	                    <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
-	                    <div class="card-body">
-	                    	<h5 class="card-title">{{produk.nama}} {{produk.vendor}}</h5>
-	                    	<p class="card-subtitle">{{produk.lokasi}}</p>
-	                    	<p class="card-text pt-1">Rp {{produk.harga}}/ {{produk.satuan}}</p>
-	                    	<a href="detail-item/{{produk.id}}/" class="btn btn-outline-primary btn-block mt-2">Lihat Produk</a>
-	                    </div>
-	                </div>
-	            </div>
-	  		{% endfor %}
-	  	{% else %}
-	  		Belum Ada Produk Yang Tersedia
-	  	{% endif%}
-		
-	</div>
+  	<div class="row">
+  	  	{% if produks %}	  	
+  	  		{% for produk in produks %}
+    				<div class="col-md-2 pt-2">
+    			  		<div class="card border-dark mb-3 text-center">
+                    <img class="card-img-top" src="{{produk.urlimg}}" alt="Card image" height="120px">
+                    <div class="card-body">
+                    	<h5 class="card-title">{{produk.nama}} {{produk.vendor}}</h5>
+                    </div>
+                </div>
+            </div>
+  	  		{% endfor %}
+          <a href="display-items/" class="btn btn-outline-primary btn-block mt-2 offset-md-5 col-md-3">Lihat Semua Produk</a>
+
+  	  	{% else %}
+  	  		Belum Ada Produk Yang Tersedia
+  	  	{% endif%}
+  		
+  	</div>
   </div>
+
+  <!-- Deskripsi Fitur -->
+  <section>
+    <div class="row mt-5">
+      <div class="col-md-6 offset-md-2">
+        <h1>Big database of sellers</h1>
+        <p class="text-left h4"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>            
+      </div>
+      <div class="col-md-4"> 
+        <img src="https://files.catbox.moe/jnfcgi.JPG">
+      </div>
+    </div>    
+  </section>
+  <section>
+    <div class="row mt-5">
+      <div class="col-md-4 offset-md-1 order-2 order-md-1"> 
+        <img src="https://files.catbox.moe/hkucft.JPG">
+      </div>
+      <div class="col-md-7 order-1 order-md-2">
+        <h1>Real-time tracking</h1>
+        <p class="text-left h4"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>            
+      </div>
+      
+    </div>    
+  </section>
 {% endblock %}
