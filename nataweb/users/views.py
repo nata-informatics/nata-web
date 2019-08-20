@@ -30,7 +30,8 @@ def sign_up(request):
 def sign_in(request):
 	if request.method == "POST":
 		user = authenticate(email=request.POST['email'], password=request.POST['password'])
-		login(request, user)
+		if (user != None):
+			login(request, user)
 		return HttpResponseRedirect('/')
 
 	return render(request, 'sign-in.html')

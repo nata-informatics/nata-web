@@ -44,11 +44,10 @@ INSTALLED_APPS = [
     'home',
     'base',
     'landing',
-    'show',
     'vendor',
     'users',
     'catalog',
-    'about'
+    'about',
 ]
 
 MIDDLEWARE = [

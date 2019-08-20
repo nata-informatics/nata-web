@@ -3,6 +3,8 @@ Vendor
 Event
 Jenis Barang
 
+user:
+
 vendor:
 id (PK)
 nama (not null)

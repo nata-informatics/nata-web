@@ -1,4 +1,4 @@
-{% extends 'base-azhar.html' %}
+{% extends 'base.html' %}
 {% block title %}
 home
 {% endblock %}
@@ -18,7 +18,7 @@ home
 {% block js %}
 <script>
 $(document).ready(function(){
-  var items = ["Venue", "Stage", "Accessories", "Equipment", "Sound System", "Parking Lot"];
+  var items = ["Risoles", "Piscok", "Donat", "Merch", "Pisang Goreng"];
   for (i = 0, len = items.length; i < len; i++) {
     $(".carousel_holder").append(
     '<div class="row pt-5">'+
@@ -26,6 +26,9 @@ $(document).ready(function(){
           '<h2>' + items[i] + ' in Jakarta</h2>'+
         '</div>'+
     '</div>'+
+    '{% if user.is_superuser %} ' + 
+      '<div class="btn btn-outline-primary btn-block"> <a href="">Add </a></div>' +
+    '{% endif %}' +
     '<div class="row">'+
       '<div class="col-md-1 card-btn">'+
         '<a class="btn-floating child" href="#multi-item-carousel_'+i+'" data-slide="prev" id="left_'+i+'"><i class="fas fa-chevron-left"></i></a>'+

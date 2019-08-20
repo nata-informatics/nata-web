@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+Tambah Item
+{% endblock %}
+
+{% block content %}
+	{% if user.is_superuser %}
+		<h1>Form Add Item</h1>
+		
+		<form method="POST">
+			{% csrf_token %}
+			<div class="form-group">
+			    <label for="namaProduk">Nama Produk</label>
+			    <input type="text" class="form-control" id="namaProduk" name="namaProduk" aria-describedby="emailHelp" placeholder="Risoles" required="true">
+			</div>
+			<div class="form-group">
+			    <label for="namaVendor">Nama Vendor</label>
+			    <input type="text" class="form-control" id="namaVendor" name="namaVendor" placeholder="Mas Koko" required="true">
+			</div>
+			<div class="form-group">
+			    <label for="hargaProduk">Harga (Rp)</label>
+			    <input type="number" class="form-control" id="hargaProduk" name="hargaProduk" placeholder="" required="true">
+			</div>
+			<div class="form-group">
+			    <label for="satuanProduk">Satuan</label>
+			    <input type="text" class="form-control" id="satuanProduk" name="satuanProduk" placeholder="Box, Lusin, dll." required="true">
+			</div>
+			<div class="form-group">
+			    <label for="lokasiVendor">Lokasi</label>
+			    <input type="text" class="form-control" id="lokasiVendor" name="lokasiVendor" placeholder="Kutek, Kober, Jln. In Aja Dulu" required="true">
+			</div>
+			<div class="form-group">
+			    <label for="stockAvailabitlity">Stock Available (Checklist if available)</label>
+			    <input type="checkbox" class="form-control align-self-start" id="stockAvailabitlity" name="stockAvailabitlity">
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	{% endif %}
+{% endblock %}

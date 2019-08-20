@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+Produk
+{% endblock %}
+
+{% block content %}
+	<div class="container-fluid">
+		<div class="col-md-12">
+			<div class="card border-dark text-center">
+                <img class="card-img-top" src="https://dummyimage.com/vga" alt="Card image">
+                <div class="card-body">
+                	<h5 class="card-title">{{produk.nama}} {{produk.vendor}}</h5>
+                	<p class="card-subtitle">{{produk.lokasi}}</p>
+                	<p class="card-text pt-1">Rp {{produk.harga}}/ {{produk.satuan}}</p>
+                	Stok : {{availability}}
+                </div>
+            </div>
+		</div>
+	</div>
+{% endblock %}
