@@ -35,3 +35,5 @@ urlpatterns = [
     path('about/', include('about.urls')),
     path('landing/', include('landing.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+handler404 = 'home.views.error_404_view'

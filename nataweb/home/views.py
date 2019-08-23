@@ -7,6 +7,10 @@ def home(request):
 	context["produks"] = Produks.objects.all()
 	return render(request, 'home-farras.html', context)
 
+def error_404_view(request, exception):
+	data = {"name" : "ThePythonDjango.com"}
+	return render(request, "error_404.html", data)
+
 def addItem(request):
 	if (request.user.is_superuser):
 		if request.method == "POST":

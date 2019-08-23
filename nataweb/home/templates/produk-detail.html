@@ -1,24 +1,56 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
 Produk
 {% endblock %}
 
+{% block js %}
+    <script type="text/javascript">
+        
+        $(function() {
+            $("#addToCartBtn").on("click", function(event) {
+                var totalItems = parseInt($("#item-counter").html());
+                console.log(totalItems);
+                $("#item-counter").html(totalItems + 1);
+                
+                $.ajax({
+                    url : "/cart/get-or-create-cart/",
+                    type : "POST",
+                    data : {
+                        produkId : $("input[name=idProduk]").val(),
+                        csrfmiddlewaretoken : $('input[name=csrfmiddlewaretoken]').val(),
+                    },
+                    success : function(response) {
+                        console.log(response);
+                    }
+                });
+
+            });
+        });
+    </script>
+{% endblock %}
+
 {% block content %}
 	<div class="container-fluid">
-		<div class="col-md-12">
-			<div class="card border-dark text-center">
-                <img class="card-img-top" src="{{produk.urlimg}}" alt="Card image">
-                <div class="card-body">
-                	<h5 class="card-title">{{produk.nama}} {{produk.vendor}}</h5>
-                	<p class="card-subtitle">{{produk.lokasi}}</p>
-                	<p class="card-text">Rp {{produk.harga}}/ {{produk.satuan}}</p>                    
-                    <p class="card-text">Stok : {{availability}}</p>
-                	
-                	{% if user.is_authenticated %}
-                		<button class="card-link btn btn-primary">Add to cart</button>
-                	{% endif %}
-                </div>
+        <div class="row">
+    		<div class="col-md-4">
+                <img class="card-img-top" src="{{produk.urlimg}}" alt="Card image" width="128">            
             </div>
-		</div>
+            <div class="col-md-8">     
+                <h5 class="">{{produk.nama}} {{produk.vendor}}</h5>
+                <p class="">{{produk.lokasi}}</p>
+                <p class="">Rp {{produk.harga}}/ {{produk.satuan}}</p>                    
+                <p class="">Stok : {{availability}}</p>
+                <input type="hidden" name="idProduk" value="{{produk.id}}">
+                {% if user.is_authenticated %}
+                    {% csrf_token %}
+                    <button class="btn btn-primary" id="addToCartBtn">Add to cart</button>
+                    
+                {% else %}
+                    <p class="">Ingin memesan? <a href="/users/sign-in/">Login disini.</a></p>
+                {% endif %}       
+            </div>
+            
+        </div>
 	</div>
 {% endblock %}

@@ -15,7 +15,7 @@
                 <li class="nav-item"> <a class="nav-link" href="">Apps</a> </li>
                 <li class="nav-item"> <a class="nav-link" href="/about/">About</a> </li>
                 {% if user.is_authenticated %}                    
-                    <li class="nav-item"> <a class="nav-link" href="/cart/"> <i class="fas fa-shopping-cart"></i> <small>0</small> </a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/cart/"> <i class="fas fa-shopping-cart"></i> <small id="item-counter">0</small> </a></li>
                 {% endif %} 
             </ul>
             {% if user.is_authenticated %}
