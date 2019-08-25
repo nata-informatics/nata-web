@@ -1,0 +1,2 @@
+migrate: bash deployment.sh
+web: gunicorn nataweb.wsgi --log-file -

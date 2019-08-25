@@ -1,0 +1,34 @@
+stages:
+  - test
+  - deploy
+UnitTest:
+  image: python:3.6
+  stage: test
+  before_script:
+    - pip install -r requirements.txt
+    - python manage.py migrate
+    - wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz
+    - tar -xvzf geckodriver-v0.23.0-linux64.tar.gz
+    - rm geckodriver-v0.23.0-linux64.tar.gz
+    - chmod +x geckodriver
+    - cp geckodriver /usr/local/bin/
+    - apt-get update -qq && apt-get install -y -qq firefox-esr
+    - python manage.py collectstatic --no-input
+  when: on_success
+  script:
+    - coverage run --include='home/*','cart/*','users/*' about.py test
+    - coverage report -m
+
+Deployment:
+  image: ruby:2.4
+  stage: deploy
+  before_script:
+    - gem install dpl
+    - wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
+  script:
+    - dpl --provider=heroku --app=$HEROKU_APPNAME --api-key=$HEROKU_APIKEY
+    - export HEROKU_API_KEY=$HEROKU_APIKEY
+    - heroku run --app $HEROKU_APPNAME migrate
+  environment:
+    name: production
+    url: $HEROKU_APP_HOST
