@@ -1,14 +1,14 @@
 from django.contrib import admin
 from .models import *
 
-class CartAdmin(admin.ModelAdmin):
+class TransactionAdmin(admin.ModelAdmin):
     list_display = ["user", "total"]
     list_filter = ["user"]
     search_fields = ["user"]
 
     class Meta:
-        model = Cart
+        model = Transaction
 
 # Register your models here.
-admin.site.register(Cart, CartAdmin)
+admin.site.register(Transaction, TransactionAdmin)
 # Register your models here.

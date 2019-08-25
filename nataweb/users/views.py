@@ -28,10 +28,19 @@ def sign_up(request):
 	return render(request, 'sign-up.html', context)
 
 def sign_in(request):
-	if request.method == "POST":
-		user = authenticate(email=request.POST['email'], password=request.POST['password'])
-		if (user != None):
-			login(request, user)
-		return HttpResponseRedirect('/')
+	if request.session.get("_auth_user_id") == None:
+		if request.method == "POST":
+			user = authenticate(email=request.POST['email'], password=request.POST['password'])
+			if (user != None):
+				login(request, user)
+			else :
+				request.session["message"] = "Email or Password is invalid."
+				return HttpResponseRedirect('/users/sign-in/')
 
-	return render(request, 'sign-in.html')
+			if request.session.get("message") != None:
+				del request.session["message"]
+			return HttpResponseRedirect('/')
+
+		return render(request, 'sign-in.html')
+	else:
+		return HttpResponseRedirect("/")

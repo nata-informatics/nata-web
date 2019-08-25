@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Produks(models.Model):
+class Produk(models.Model):
 	nama = models.CharField(max_length=255)
 	vendor = models.CharField(max_length=255)
 	urlimg = models.TextField(default="https://dummyimage.com/vga")

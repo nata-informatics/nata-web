@@ -10,6 +10,11 @@ Sign In
 <div class="row pt-3">
     <div class="mx-auto col-md-5 col-10 bg-white p-5 shadow-lg">
         <h1 class="mb-4" style="text-align: center">Sign In</h1>
+        {% if request.session.message %}
+            <div class="alert alert-danger"> 
+                {{request.session.message}}
+            </div>
+        {% endif %}
         <form class="text-left" method="POST">
             {% csrf_token %}
             <div class="form-group"><label>Email</label>

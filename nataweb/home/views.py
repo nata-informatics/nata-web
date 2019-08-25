@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Produks
+from .models import Produk
 
 # Create your views here.
 def home(request):
 	context = {}
-	context["produks"] = Produks.objects.all()
+	context["produks"] = Produk.objects.all()
 	return render(request, 'home-farras.html', context)
 
 def error_404_view(request, exception):
@@ -26,14 +26,14 @@ def addItem(request):
 			else: 
 				stockAvailabitlity = True
 			print(stockAvailabitlity)
-			Produks.objects.create(nama=namaItem, vendor=namaVendor, harga=hargaProduk, stok=stockAvailabitlity, lokasi=lokasiVendor, urlimg=linkImg)
+			Produk.objects.create(nama=namaItem, vendor=namaVendor, harga=hargaProduk, stok=stockAvailabitlity, lokasi=lokasiVendor, urlimg=linkImg)
 			return redirect("/")
 		return render(request, 'add-item.html')
 	else:
 		return redirect("/landing/")
 
 def detailItem(request, id=None):
-	produk_instance = get_object_or_404(Produks, id=id)
+	produk_instance = get_object_or_404(Produk, id=id)
 	context = {
 		'produk' : produk_instance,
 		'availability' : "Available" if produk_instance.stok == True else "Not Available",
@@ -42,7 +42,7 @@ def detailItem(request, id=None):
 
 def displayItems(request):
 	context = {}
-	context["produks"] = Produks.objects.all()
+	context["produks"] = Produk.objects.all()
 	return render(request, "display-items.html", context)
 
 def logout(request):

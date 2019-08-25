@@ -8,7 +8,7 @@ class ProdukAdmin(admin.ModelAdmin):
     search_fields = ["nama", "vendor"]
 
     class Meta:
-        model = Produks
+        model = Produk
 
 # Register your models here.
-admin.site.register(Produks, ProdukAdmin)
+admin.site.register(Produk, ProdukAdmin)
